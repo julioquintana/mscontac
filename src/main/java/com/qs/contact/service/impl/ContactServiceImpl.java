@@ -83,7 +83,7 @@ public class ContactServiceImpl implements ContactService {
 		return mapper.map(contactRequest, Contact.class);
 	}
 
-	private List<ContactResponse> 	(Iterable<Contact> contactIterable) {
+	private List<ContactResponse> buildResponseIterable(Iterable<Contact> contactIterable) {
 		List<Contact> ContactRS = (List<Contact>) contactIterable;
 
 		List<ContactResponse> asDto = ContactRS.stream().map(new Function<Contact, ContactResponse>() {
