@@ -24,5 +24,16 @@ public class ContactResponse {
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
+	public ContactResponse() {
+		super();
+	}
+	public ContactResponse(Long id, String name, String phoneNumber) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.phoneNumber = phoneNumber;
+	}
+	
+	
 	
 }

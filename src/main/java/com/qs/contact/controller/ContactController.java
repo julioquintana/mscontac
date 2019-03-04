@@ -1,9 +1,9 @@
 package com.qs.contact.controller;
 
+import java.util.List;
 import java.util.Objects;
 import java.util.stream.Stream;
 
-import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.qs.contact.dao.Contact;
 import com.qs.contact.dto.ContactRequest;
 import com.qs.contact.dto.ContactResponse;
 import com.qs.contact.exception.ValidationException;
@@ -39,10 +38,10 @@ public class ContactController {
 
 	// traeme todos
 	@GetMapping("/person")
-	public HttpEntity<ContactResponse> getAllPerson() throws ValidationException {
+	public ResponseEntity<List<ContactResponse>> getAllPerson() throws ValidationException {
 
 		System.out.println("Entrando a getAll");
-		return new ResponseEntity<ContactResponse>(contactService.findAllContact(), HttpStatus.OK);
+		return new ResponseEntity<List<ContactResponse>>(contactService.findAllContact(), HttpStatus.OK);
 
 	}
 
